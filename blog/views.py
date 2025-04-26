@@ -6,5 +6,7 @@ from .models import Post
 class PostList(generic.ListView):
     # model = Post -now redundant by queryset
     queryset = Post.objects.filter(status=1)
-    template_name = 'post_list.html' 
+    # template_name = 'post_list.html' - deleting post_list.html as we are using index.html
     # above line is redundant by django's default naming rule which is <app_name>/<model_name>_list.html
+    template_name = 'blog/index.html'
+    paginate_by = 6

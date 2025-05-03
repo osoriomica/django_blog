@@ -5,8 +5,11 @@ from cloudinary.models import CloudinaryField
 
 
 class About(models.Model):
+    """
+    Stores a single about entry related to a :model:`auth.User`.
+    """
     title = models.CharField(max_length=200)
-    featured_image = CloudinaryField(
+    profile_image = CloudinaryField(
         'image', default='placeholder')
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
@@ -16,6 +19,9 @@ class About(models.Model):
 
 
 class CollaborateRequest(models.Model):
+    """
+    Stores a single collaboration request.
+    """
     name = models.CharField(max_length=200)
     email = models.EmailField()
     message = models.TextField()

@@ -11,7 +11,7 @@ class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE,
         )
-    feautured_image = CloudinaryField(
+    featured_image = CloudinaryField(
         'image', default='placeholder')
     content = models.TextField()  
     created_on = models.DateTimeField(auto_now_add=True)
